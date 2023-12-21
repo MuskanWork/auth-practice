@@ -1,0 +1,27 @@
+type Query {
+  hello: String
+}
+
+type Query {
+  users: [User]!
+}
+
+type User {
+  id: ID
+  email: String
+  password: String
+}
+
+type AuthResponse {
+  message: String
+  token: String
+}
+
+type Mutation {
+  registerUser(
+    email: String!
+    password: String!
+    confirmPassword: String!
+  ): User
+  loginUser(email: String!, password: String!): AuthResponse
+}
